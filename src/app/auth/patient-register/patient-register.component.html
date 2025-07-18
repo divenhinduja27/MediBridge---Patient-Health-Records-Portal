@@ -1,1 +1,35 @@
-<p>patient-register works!</p>
+<div class="form-container">
+  <h2>Patient Registration</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <label for="fullName">Full Name</label>
+    <input id="fullName" type="text" formControlName="fullName" placeholder="Enter your full name" required>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" placeholder="Enter your email" required>
+
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username" placeholder="Choose a username" required>
+
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" placeholder="Create a password" required>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirm password" required>
+    <div class="checkbox-wrapper">
+      <input type="checkbox" id="terms" />
+      <label for="terms">I accept the terms and conditions</label>
+    </div>
+
+
+    <button type="submit" class="submit-btn">Register</button>
+
+    <p class="form-link">
+      Already have an account? <a routerLink="/patient-login">Login</a>
+    </p>
+  </form>
+
+  <p *ngIf="registrationError" class="error-message">Registration failed. Please check all inputs.</p>
+  <p *ngIf="registrationSuccess" class="success-message">Registration successful!</p>
+</div>

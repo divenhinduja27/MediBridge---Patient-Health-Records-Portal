@@ -5,6 +5,7 @@ import { HospitalRegisterComponent } from './hospital-register/hospital-register
 import { PatientRegisterComponent } from './patient-register/patient-register.component';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }
